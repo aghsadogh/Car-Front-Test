@@ -16,9 +16,13 @@ steps:
 - script: |
    cd SoftServeCarMobile
    npm install
-   npm run build
   displayName: 'Install dependencies and build'
   
+- script: |
+    cd android
+    bundle install
+    fastlane build
+  displayName: 'Build android'
 
 - script: |
     cd SoftServeCarMobile
