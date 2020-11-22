@@ -19,7 +19,7 @@ steps:
   displayName: 'Install dependencies and build'
   
 - script: |
-    cd android
+    cd SoftServeCarMobile/android
     bundle install
     fastlane build
   displayName: 'Build android'
