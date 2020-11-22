@@ -16,7 +16,8 @@ steps:
 - script: |
    cd SoftServeCarMobile
    npm install
-  displayName: 'Install dependencies'
+   npm run build
+  displayName: 'Install dependencies and build'
   
 
 - script: |
@@ -24,11 +25,3 @@ steps:
     npm run test
   displayName: 'Run unit tests'
 
-
-- script: sudo xcode-select --switch /Applications/Xcode_11.3.1.app/Contents/Developer 
-  displayName: 'Select xcode 11.3'
-
-- script: |
-    cd SoftServeCarMobile/ios
-    npm run android
-  displayName: 'Build iOS'
