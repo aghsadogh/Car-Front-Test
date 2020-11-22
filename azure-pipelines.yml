@@ -18,10 +18,15 @@ steps:
    npm install
   displayName: 'Install dependencies and build'
   
-# - script: |
-#     cd SoftServeCarMobile
-#     npm run test
-#   displayName: 'Run unit tests'
+- script: |
+    cd SoftServeCarMobile
+    npm run lint
+  displayName: 'Run lint'
+
+- script: |
+    cd SoftServeCarMobile
+    npm run test
+  displayName: 'Run unit tests'
 
 - task: Gradle@2
   inputs:
