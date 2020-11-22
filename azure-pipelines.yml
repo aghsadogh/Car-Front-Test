@@ -19,13 +19,26 @@ steps:
   displayName: 'Install dependencies and build'
   
 - script: |
-    cd SoftServeCarMobile/android
-    bundle install
-    fastlane build
-  displayName: 'Build android'
-
-- script: |
     cd SoftServeCarMobile
     npm run test
   displayName: 'Run unit tests'
+
+- task: Gradle@2
+  inputs:
+    workingDirectory: 'SoftServeCarMobile/android'
+    gradleWrapperFile: 'SoftServeCarMobile/android/gradlew'
+    gradleOptions: '-Xmx3072m'
+    publishJUnitResults: false
+    testResultsFiles: '**/TEST-*.xml'
+    tasks: 'assembleRelease'
+
+- task: AndroidSigning@2
+  inputs:
+    apkFiles: '**/*.apk'
+    jarsign: true
+    jarsignerKeystoreFile: 'android.keystore'
+    jarsignerKeystorePassword: '$(jarsignerKeystorePassword)'
+    jarsignerKeystoreAlias: 'react-native-pipeline-key'
+    jarsignerKeyPassword: '$(jarsignerKeyPassword)'
+    zipalign: true
 
