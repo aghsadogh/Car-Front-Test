@@ -7,16 +7,35 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
-
+  vmImage: 'macOS 10.13'
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
+    versionSpec: '9.7.1'
+  displayName: 'Install Node'
+- script: |
+   cd SoftServeCarMobile
+   npm install
+  displayName: 'Install dependencies'
+  
+- script: | 
+   cd SoftServeCarMobile
+   npm run lint
+  displayName: 'Run lint'
 
 - script: |
     cd SoftServeCarMobile
-    npm install 
-    npm run build
-  displayName: 'npm install and build'
+    npm run test
+  displayName: 'Run unit tests'
+
+- script: |
+    cd SoftServeCarMobile/ios
+    bundle install
+    fastlane build
+  displayName: 'Build iOS'
+
+- script: |
+    cd SoftServeCarMobile/android
+    bundle install
+    fastlane build
+  displayName: 'Build android'
