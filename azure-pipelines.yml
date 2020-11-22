@@ -26,10 +26,10 @@ steps:
 
 - script: |
     cd SoftServeCarMobile/ios
-    npm ios
+    npm run ios
   displayName: 'Build iOS'
 
 - script: |
     cd SoftServeCarMobile/android
-    npm android
+    npm run android
   displayName: 'Build android'
