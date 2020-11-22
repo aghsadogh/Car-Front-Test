@@ -17,7 +17,7 @@ import {
 } from 'react-native';
 
 import {
-  Headgsder,
+  Header,
   LearnMoreLinks,
   Colors,
   DebugInstructions,
@@ -45,7 +45,7 @@ const App: () => React$Node = () => {
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
                 screen and then come back to see your edits.
               </Text>
-            </View
+            </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>See Your Changes</Text>
               <Text style={styles.sectionDescription}>
