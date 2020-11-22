@@ -24,17 +24,6 @@ steps:
     npm run test
   displayName: 'Run unit tests'
 
-- task: InstallAppleCertificate@2
-  displayName: "Install Apple Certificate"
-  inputs:
-    certSecureFile: 'dev-certificate.p12'
-    certPwd: '$(CertificatePassword)'
-
-- task: InstallAppleProvisioningProfile@1
-  displayName: "Install Apple provisioning profile"
-  inputs:
-    provisioningProfileLocation: 'secureFiles'
-    provProfileSecureFile: 'dev.mobileprovision'
 
 - script: sudo xcode-select --switch /Applications/Xcode_11.3.1.app/Contents/Developer 
   displayName: 'Select xcode 11.3'
