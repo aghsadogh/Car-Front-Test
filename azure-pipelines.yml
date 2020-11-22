@@ -25,11 +25,14 @@ steps:
   displayName: 'Run unit tests'
 
 - script: |
+    cd SoftServeCarMobile/android
+    npm install -g react-native-cli
+    npm run android
+    displayName: 'Build android'
+  
+- script: |
     cd SoftServeCarMobile/ios
+    npm install -g react-native-cli
     npm run ios
   displayName: 'Build iOS'
 
-- script: |
-    cd SoftServeCarMobile/android
-    npm run android
-  displayName: 'Build android'
