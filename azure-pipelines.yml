@@ -26,12 +26,10 @@ steps:
 
 - script: |
     cd SoftServeCarMobile/ios
-    bundle install
-    fastlane build
+    npm ios
   displayName: 'Build iOS'
 
 - script: |
     cd SoftServeCarMobile/android
-    bundle install
-    fastlane build
+    npm android
   displayName: 'Build android'
