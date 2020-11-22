@@ -18,10 +18,6 @@ steps:
    npm install
   displayName: 'Install dependencies'
   
-- script: | 
-   cd SoftServeCarMobile
-   npm run lint
-  displayName: 'Run lint'
 
 - script: |
     cd SoftServeCarMobile
