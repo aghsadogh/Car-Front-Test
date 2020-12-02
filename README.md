@@ -120,15 +120,3 @@ Pull request should not contain any files that is not required by task.
 
 Reach out to me at one of the following places!
 
-- Facebook at <a href="https://www.facebook.com/nrevutska" target="_blank">`Nataliya Revutska`</a>
-- LinkedIn at <a href="https://www.linkedin.com/in/nrevutska" target="_blank">`Nataliya Revutska`</a>
-- Insert more social links here.
-
----
-
-## License
-
-[![License](http://img.shields.io/:license-mit-ff69b4.svg?style=flat-square)](http://badges.mit-license.org)
-
-- **[MIT license](http://opensource.org/licenses/mit-license.php)**
-- Copyright 2020 © <a href="https://softserve.academy/" target="_blank"> SoftServe IT Academy</a>.
